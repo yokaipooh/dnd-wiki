@@ -1,0 +1,238 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"ignorePatterns": [
+		"**/env.js",
+		"**/*.config.js"
+	],
+	"extends": [
+		"airbnb-typescript",
+		"prettier",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"project": "./tsconfig.json"
+	},
+	"plugins": [
+		"import",
+		"prettier",
+		"unused-imports",
+		"simple-import-sort",
+		"@typescript-eslint",
+		"react-hooks"
+	],
+	"rules": {
+		"dot-notation": "off",
+		"@typescript-eslint/dot-notation": "warn",
+		"semi": [
+			"error",
+			"always"
+		],
+		"quotes": [
+			"error",
+			"single",
+			{
+				"allowTemplateLiterals": true
+			}
+		],
+		"comma-dangle": [
+			"error",
+			"always-multiline"
+		],
+		"no-tabs": [
+			"error",
+			{
+				"allowIndentationTabs": true
+			}
+		],
+		"no-multi-spaces": [
+			"error",
+			{
+				"ignoreEOLComments": false
+			}
+		],
+		"space-before-blocks": [
+			"error"
+		],
+		"no-irregular-whitespace": [
+			"error"
+		],
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1,
+				"maxEOF": 0
+			}
+		],
+		"no-unused-vars": [
+			"error",
+			{
+				"vars": "all",
+				"args": "none",
+				"ignoreRestSiblings": true
+			}
+		],
+		"max-len": [
+			"error",
+			{
+				"code": 100,
+				"tabWidth": 2,
+				"ignoreComments": true,
+				"ignoreUrls": true
+			}
+		],
+		"@typescript-eslint/ban-types": [
+			"error",
+			{
+				"extendDefaults": true,
+				"types": {
+					"{}": false,
+					"object": false
+				}
+			}
+		],
+		"@typescript-eslint/explicit-function-return-type": [
+			"warn",
+			{
+				"allowExpressions": true
+			}
+		],
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+		"react/jsx-filename-extension": [
+			0
+		],
+		"import/no-extraneous-dependencies": [
+			"error",
+			{
+				"devDependencies": true
+			}
+		],
+		"@typescript-eslint/default-param-last": [
+			"off"
+		],
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"ts": "never",
+				"tsx": "never"
+			}
+		],
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto",
+				"singleQuote": true
+			}
+		],
+		"unused-imports/no-unused-imports": [
+			"error"
+		],
+		"simple-import-sort/exports": [
+			"error"
+		],
+		"simple-import-sort/imports": [
+			"error",
+			{
+				"groups": [
+					[
+						"^react.*",
+						"^(?!src|.?./|.+\\.(s?css|less)$).*"
+					],
+					[
+						"^src"
+					],
+					[
+						"^\\.\\.(?!/?$)",
+						"^\\.\\./?$",
+						"^\\./(?=.*/)(?!/?$)",
+						"^\\.(?!/?$)",
+						"^\\./?$"
+					],
+					[
+						"^.+\\.(s?css|less)$"
+					]
+				]
+			}
+		]
+	},
+	"settings": {
+		"import/resolver": {
+			"alias": {
+				"map": [
+					[
+						"@components",
+						"src/components"
+					],
+					[
+						"@services",
+						"src/services"
+					],
+					[
+						"@constants",
+						"src/constants"
+					],
+					[
+						"@features",
+						"src/features"
+					],
+					[
+						"@shared",
+						"src/shared"
+					],
+					[
+						"@enum",
+						"src/enum"
+					],
+					[
+						"@interfaces",
+						"src/interfaces"
+					],
+					[
+						"@hooks",
+						"src/hooks"
+					],
+					[
+						"@contexts",
+						"src/contexts"
+					],
+					[
+						"@utils",
+						"src/utils"
+					]
+				]
+			},
+			"node": {
+				"extensions": [
+					".android.js",
+					".ios.js",
+					".js",
+					".jsx",
+					".ts",
+					".tsx"
+				],
+				"paths": [
+					"./"
+				]
+			},
+			"typescript": {}
+		}
+	},
+	"globals": {
+		"chrome": true,
+		"fetch": true,
+		"FormData": true,
+		"document": true,
+		"window": true
+	}
+}
